@@ -232,7 +232,8 @@
 				</file>
 			</activation>
 			<modules>
-				<module>../datasink-elasticsearch1-4</module>
+				<!-- TODO provide project ? -->
+				<!--<module>../datasink-elasticsearch1-4</module>-->
 			</modules>
 			<build>
 				<pluginManagement>
