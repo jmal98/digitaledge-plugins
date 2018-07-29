@@ -681,8 +681,7 @@
 		<module>../datasink-titan</module>-->
 
 		<!-- Suite -->
-		<!-- TODO provide project ? -->
-		<!--<module>../webapp-remote-logsearch-configuration</module>-->
+		<module>../webapp-remote-logsearch-configuration</module>
 
 		<!-- Assembly -->
 		<!-- TODO provide project ? -->
