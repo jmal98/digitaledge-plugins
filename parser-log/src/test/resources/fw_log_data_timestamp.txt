@@ -1,0 +1,10 @@
+06232008/monday.022508:<170>Feb 25 2008 07:30:46: %PIX-2-106001: Inbound TCP connection denied from 38.117.198.34/3350 to 69.55.166.198/135 flags SYN  on interface outside
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3352 dst inside:69.55.166.200/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3352 dst inside:69.55.166.200/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3353 dst DMZ:69.55.166.203/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3353 dst DMZ:69.55.166.203/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3354 dst DMZ:69.55.166.201/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3354 dst DMZ:69.55.166.201/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3356 dst inside:69.55.166.207/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3356 dst inside:69.55.166.207/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]
+06232008/monday.022508:<172>Feb 25 2008 07:30:46: %PIX-4-106023: Deny tcp src outside:38.117.198.34/3355 dst DMZ:69.55.166.208/135 by access-group "outside_acl" [0xf6bcea6a, 0x0]

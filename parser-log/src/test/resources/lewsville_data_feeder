@@ -1,0 +1,105 @@
+#!/usr/bin/env python
+
+import sys
+import getopt
+import syslog
+import csv
+import gzip
+import re
+import time
+
+def process(row):
+    timestamp = row[0]
+    source = row[1]
+    event = row[2]
+    event_list = [p for p in re.split("( |\\\".*?\\\"|'.*?')", event) if p.strip()]
+    
+    if 'iis_exchange' in source:
+        event_processed = " ".join(event_list[3:])
+        
+    elif 'iis_issaic' in source:
+        event_processed = " ".join(event_list[2:])
+        
+    elif 'emgt_2k8_iis' in source:
+        event_processed = " ".join(event_list[2:]) 
+            
+    elif 'palo_alto' in source:
+        event_processed = " ".join(event_list[6:])
+        
+    elif 'juniperfw' in source:
+        event_processed = " ".join(event_list[4:])
+            
+    elif 'snortUA' in source: 
+        event_processed = " ".join(event_list[0:])
+    
+    elif 'sourcefire' in source: 
+        event_processed = " ".join(event_list[0:])
+    
+    elif 'riverbed' in source: 
+        event_processed = " ".join(event_list[0:])
+        
+    elif 'sslvpn' in source: 
+        event_processed = " ".join(event_list[0:])
+        
+    elif 'aws_test' in source:
+        event_processed = " ".join(event_list[3:])
+        
+    else:
+        event_processed = " ".join(event_list[0:])        
+    
+    #print 'Timestamp:', timestamp
+    print 'Source:', source
+    print 'Event:', event
+    print 'Event parts:', event_processed
+    syslog.openlog(source, 0, syslog.LOG_LOCAL4 )    
+    syslog.syslog(event_processed)
+    syslog.closelog()   
+    
+def main(argv):
+    try:
+        opts, args = getopt.getopt(argv, "hf:", ["help", "file="] )
+    except getopt.GetoptError:
+        sys.exit(2)
+    
+    for opt, arg in opts:
+        if opt == '-f':
+            sourceFile = arg   
+    
+    print 'Feeding rsyslogd:', sourceFile
+    #syslog.openlog( 'myTestLog', 0, syslog.LOG_LOCAL4 )
+    #syslog.syslog( '%%TEST-6-LOG: Log msg: %s' % 'test msg' )
+    
+    if sourceFile.endswith('.gz'):
+        print 'Processing contents as gzip'
+        # Note can't use with gzip.open in Python 2.6
+        # You can with Python 2.7, but lewisville clc currently has just Python 2.6.6
+        # see: https://mail.python.org/pipermail/tutor/2009-November/072979.html
+        #with gzip.open(sourceFile,'r') as f:
+            #reader = csv.reader(f, delimiter=',', quotechar='"')
+            #for row in reader:
+                #process(row)
+        f = gzip.open(sourceFile,'r')
+        reader = csv.reader(f, delimiter=',', quotechar='"')
+        ct = 0
+        for row in reader:
+            process(row)
+            ct += 1
+            if ct > 4000:
+                time.sleep(1)
+                ct = 0
+            
+        f.close()
+    else:
+        ct = 0
+        with open(sourceFile,'r') as f:
+            reader = csv.reader(f, delimiter=',', quotechar='"')
+            for row in reader:
+                process(row)
+                ct += 1
+            if ct > 4000:
+                time.sleep(1)
+                ct = 0 
+            
+# Main
+if __name__ == '__main__':        
+    main(sys.argv[1:])

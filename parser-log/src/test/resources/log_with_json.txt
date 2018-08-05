@@ -1,0 +1,2 @@
+Thu, 11 Apr 2013 13:00:00.022 {"name" : "john doe", "address" : "1234 Main Ave.", "zip" : 27284}
+Thu, 11 Apr 2013 13:00:00.022 {"name" : "jane doe", "address" : "2344 Main Ave.", "zip" : 22492, "cust" : {"or" : true}}

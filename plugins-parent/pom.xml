@@ -639,7 +639,8 @@
 		<!-- Parsers -->
 
 		<!-- TODO provide project ? -->
-		<!--<module>../parser-libpcap</module>
+		<!--<module>../parser-libpcap</module>-->
+
 		<module>../parser-log</module>
 		<module>../parser-configurable-binary</module>
 		<module>../parser-configurable-multimedia</module>
@@ -648,7 +649,8 @@
 		<module>../parser-configurable-csv</module>
 		<module>../parser-configurable-json</module>
 		<module>../parser-configurable-xml</module>
-		<module>../parser-hapi</module>-->
+		<!-- TODO provide project ? -->
+		<!--<module>../parser-hapi</module>-->
 
 
 		<!-- Enrichments -->
@@ -667,8 +669,9 @@
 
 		<!-- Datasinks -->
 
+		<module>../datasink-sleep</module>
 		<!-- TODO provide project ? -->
-		<!--<module>../datasink-sleep</module>
+		<!--
 		<module>../datasink-mongo</module>
 		<module>../datasink-alerting</module>
 		<module>../datasink-summarization</module>

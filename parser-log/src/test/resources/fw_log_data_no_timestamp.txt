@@ -1,0 +1,10 @@
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 13:DEAUTH: Deleting STA
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 22:DEAUTH: WPA EAPOL-Key tries exhaustedsending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 22:DEAUTH: WPA sending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 22:DEAUTH: Deleting STA
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 44:DEAUTH: WPA EAPOL-Key tries exhaustedsending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 44:DEAUTH: WPA sending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 44:DEAUTH: Deleting STA
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 48:DEAUTH: WPA EAPOL-Key tries exhaustedsending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 48:DEAUTH: WPA sending disassoc
+06232008/friday.011808:<6>UPTIME:Days 13:Hrs 21:Mins 19:Secs 48:DEAUTH: Deleting STA
