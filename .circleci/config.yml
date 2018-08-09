@@ -1,0 +1,48 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # TODO relocate to include Ansible dependency in custom image
+      - run: sudo apt update && sudo apt install python-setuptools python-dev python-yaml libssl-dev libffi-dev
+
+      - run: sudo easy_install ansible==2.6.0
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "plugins-parent/pom.xml" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      # Ensure buildtools are present
+      - run: ./mvnw -f plugin-validator/pom.xml clean install
+
+      - run: ./mvnw -f plugins-assembly-descriptor/pom.xml clean install
+
+      # Ensure project reactor lines up
+      - run: ./mvnw -f plugins-parent/pom.xml clean
+
+      # Build
+      - run: ./mvnw -f plugins-parent/pom.xml install -DskipTests
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "plugins-parent/pom.xml" }}
+
+      # run tests!
+      - run: mkdir ~/repo/junit
+
+      - run: ./mvnw -f plugins-parent/pom.xml test
+
+      - run: find ~/repo/ -name 'TEST*.xml' | xargs -I {} cp -fv {} ~/repo/junit/.
+
+      - store_test_results:
+          path: ~/repo/junit
