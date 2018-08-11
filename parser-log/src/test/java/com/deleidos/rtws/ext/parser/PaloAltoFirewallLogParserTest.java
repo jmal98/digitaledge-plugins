@@ -231,6 +231,7 @@ import com.deleidos.rtws.core.framework.parser.ParsePipelineException;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 
+@Ignore("Disable until dependant data model is available")
 public class PaloAltoFirewallLogParserTest {
 
 	private static final Logger logger = Logger.getLogger(PaloAltoFirewallLogParserTest.class);

@@ -234,7 +234,7 @@ import com.deleidos.rtws.commons.exception.InitializationException;
 import com.deleidos.rtws.core.framework.parser.ParsePipelineException;
 import com.deleidos.rtws.ext.parser.iis.formats.W3cExtendedLogFileFormat;
 
-@Ignore
+@Ignore("Disable until dependant data model is available")
 public class IisLogParserTest {
 
 	private static final Logger logger = Logger.getLogger(IisLogParserTest.class);
