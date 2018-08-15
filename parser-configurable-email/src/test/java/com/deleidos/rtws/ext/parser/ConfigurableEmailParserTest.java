@@ -224,7 +224,7 @@ import com.deleidos.rtws.commons.cloud.platform.jetset.JetSetStorageService;
 import com.deleidos.rtws.commons.cloud.platform.jetset.JetSetThreadedStorageService;
 import com.deleidos.rtws.core.util.StandardHeader;
 
-@Ignore("Disable until dependant data model is available")
+@Ignore("Disable until connected to an AWS account")
 public class ConfigurableEmailParserTest {
 
 	private ConfigurableEmailParser emailParser;
@@ -241,8 +241,8 @@ public class ConfigurableEmailParserTest {
 		if (Boolean.getBoolean("IN_EUCA_ENV")) {
 
 		} else {
-			accessKey = "AKIAIBESDYWW5ZCJOKCQ";
-			secretKey = "kyokf7K95kyHnVnJhb8vF8jlV3rBYnIkd/Kx3TAy";
+			accessKey = "redacted";
+			secretKey = "redacted";
 			endpoint = "s3.amazonaws.com";
 			endPointPort = "80";
 		}

@@ -211,8 +211,6 @@ import java.io.FileInputStream;
 import java.util.Collection;
 import java.util.Properties;
 
-import net.sf.json.JSONObject;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -220,7 +218,8 @@ import org.junit.Test;
 
 import com.deleidos.rtws.core.util.StandardHeader;
 
-@Ignore("Disable until dependant data model is available")
+import net.sf.json.JSONObject;
+
 public class LogParserTest {
 
 	private LogParser logParser;
@@ -317,6 +316,7 @@ public class LogParserTest {
 		assertTrue(recordCount == 10);
 	}
 	
+	@Ignore("TODO disable until test input is provided")
 	@Test
 	public void testParseMultLineKeyValues() throws Exception {
 		logParser.setTimestampRegex("([A-z]{3},\\s\\d+\\s[A-z]{3}\\s\\d{4}\\s\\d{2}:\\d{2}:\\d{2}.\\d+)");
@@ -382,6 +382,7 @@ public class LogParserTest {
 		assertTrue(recordCount == 2);
 	}
 	
+	@Ignore("TODO disable until test input is provided")
 	@Test
 	public void testParseMultLineNoKeyValues() throws Exception {
 		logParser.setTimestampRegex("([A-z]{3},\\s\\d+\\s[A-z]{3}\\s\\d{4}\\s\\d{2}:\\d{2}:\\d{2}.\\d+)");

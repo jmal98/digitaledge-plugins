@@ -215,10 +215,8 @@ import java.util.Properties;
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore("Disable until dependant data model is available")
 public class JsonSyslogParserTest {
 
 	private SyslogParser parser = new SyslogParser();

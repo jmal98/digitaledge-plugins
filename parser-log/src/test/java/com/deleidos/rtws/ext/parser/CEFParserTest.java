@@ -210,19 +210,16 @@ import static org.junit.Assert.fail;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-import net.sf.json.JSONObject;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import com.deleidos.rtws.ext.parser.CEFParser;
 import com.deleidos.rtws.core.framework.parser.ParsePipelineException;
 import com.deleidos.rtws.core.framework.translator.AbstractConfigurableTranslator.FieldHandlingErrorPolicy;
 import com.deleidos.rtws.core.util.StandardHeader;
 
-@Ignore("Disable until dependant data model is available")
+import net.sf.json.JSONObject;
+
 public class CEFParserTest {
 	
 	private CEFParser cefParser;

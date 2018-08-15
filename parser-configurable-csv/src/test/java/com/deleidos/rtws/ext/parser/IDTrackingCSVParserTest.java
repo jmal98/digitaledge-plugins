@@ -211,19 +211,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 
-import net.sf.json.JSONObject;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import com.deleidos.rtws.ext.parser.ConfigurableCsvParser;
 import com.deleidos.rtws.core.framework.translator.AbstractConfigurableTranslator;
 import com.deleidos.rtws.core.util.StandardHeader;
 
-@Ignore("Disable until dependant data model is available")
+import net.sf.json.JSONObject;
+
+
 public class IDTrackingCSVParserTest {
 
 	private ConfigurableCsvParser csvParser;

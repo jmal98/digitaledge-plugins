@@ -21,28 +21,36 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      # Ensure buildtools are present
-      - run: ./mvnw -f plugin-validator/pom.xml clean install
+      - run:
+          name: Ensure buildtools (plugin validator) are present
+          command: ./mvnw -f plugin-validator/pom.xml clean install -B
 
-      - run: ./mvnw -f plugins-assembly-descriptor/pom.xml clean install
+      - run:
+          name: Ensure buildtools (plugin assembly descriptor) are present
+          command: ./mvnw -f plugins-assembly-descriptor/pom.xml clean install -B
 
-      # Ensure project reactor lines up
-      - run: ./mvnw -f plugins-parent/pom.xml clean
+      - run:
+          name: Ensure project reactor lines up
+          command: ./mvnw -f plugins-parent/pom.xml clean -B
 
-      # Build
-      - run: ./mvnw -f plugins-parent/pom.xml install -DskipTests
+      - run:
+          name: Build/Test
+          command: ./mvnw -f plugins-parent/pom.xml install -B
 
       - save_cache:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "plugins-parent/pom.xml" }}
 
-      # run tests!
-      - run: mkdir ~/repo/junit
-
-      - run: ./mvnw -f plugins-parent/pom.xml test
-
-      - run: find ~/repo/ -name 'TEST*.xml' | xargs -I {} cp -fv {} ~/repo/junit/.
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp -fv {} ~/junit/ \;
+          when: always
 
       - store_test_results:
-          path: ~/repo/junit
+          path: ~/junit
+
+      - store_artifacts:
+          path: ~/junit

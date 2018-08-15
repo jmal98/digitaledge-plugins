@@ -211,19 +211,16 @@ import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.util.Properties;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.deleidos.rtws.ext.net.application.ApplicationLayerParserTest;
 import com.deleidos.rtws.ext.net.application.ApplicationPacket;
 import com.deleidos.rtws.ext.net.application.de.model.DigitalEdgePacket;
-import com.deleidos.rtws.ext.parser.DNSPCAPParser;
 
-@Ignore("Disable until dependant data model is available")
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 public class CustomDNSParserTest extends ApplicationLayerParserTest {
 	
 	@BeforeClass

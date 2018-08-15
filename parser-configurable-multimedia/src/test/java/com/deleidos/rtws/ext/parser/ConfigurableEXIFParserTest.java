@@ -210,18 +210,15 @@ import java.io.ByteArrayInputStream;
 import java.util.Collection;
 import java.util.Properties;
 
-import net.sf.json.JSONObject;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import com.deleidos.rtws.ext.parser.ConfigurableEXIFParser;
 import com.deleidos.rtws.core.framework.parser.ParsePipelineException;
 import com.deleidos.rtws.core.util.StandardHeader;
 
-@Ignore("Re-enable when updated pipeline processing is in place")
+import net.sf.json.JSONObject;
+
 public class ConfigurableEXIFParserTest {
 	private ConfigurableEXIFParser configurableEXIFParser;
 	private SimpleConfigurableTranslator translator;
